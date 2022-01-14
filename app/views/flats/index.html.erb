@@ -9,7 +9,7 @@
     <% @flats.each do |flat|%>
       <div class=".col mx-auto">
         <div class="card m-3">
-          <img src="https://picsum.photos/seed/picsum/200/300" class="card-img-top" style="height: 200px" alt="flats">
+          <img src=<%= flat.picture_url %> class="card-img-top" style="height: 200px" alt="flats">
           <div class="card-body">
             <h5 class="card-title"><%= flat.name %></h5>
             <p class="card-text"><%= flat.address %></p>

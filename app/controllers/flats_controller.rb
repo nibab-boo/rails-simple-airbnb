@@ -6,7 +6,7 @@ class FlatsController < ApplicationController
     if params[:search]
       @flats = Flat.where("name LIKE ?", "%#{params[:search]}%")
     end
-    # raise
+    # raise 
   end
 
   def show; end
@@ -16,8 +16,8 @@ class FlatsController < ApplicationController
   end
 
   def create
-    flat = Flat.new(build_flat)
-    if flat.save
+    @flat = Flat.new(build_flat)
+    if @flat.save
       redirect_to flat_path(flat)
     else
       render :new
