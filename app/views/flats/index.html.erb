@@ -1,6 +1,10 @@
 <div class="container">
   <h3>All our Flats</h3>
-  <p>All <%= @flats.count %> flats.</p>
+  <% if params[:search] %>
+    <p>You searched for <strong><%= params[:search] %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.all.count %> on our website.</p>
+  <% else %>
+    <p>All <%= @flats.count %> flats.</p>
+  <% end %>
   <div class="row row-cols-xm-1 row-cols-sm-2 row-cols-md-3">
     <% @flats.each do |flat|%>
       <div class=".col mx-auto">

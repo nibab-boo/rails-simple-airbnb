@@ -3,6 +3,10 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+    if params[:search]
+      @flats = Flat.where("name LIKE ?", "%#{params[:search]}%")
+    end
+    # raise
   end
 
   def show; end
